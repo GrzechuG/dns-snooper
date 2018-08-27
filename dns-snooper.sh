@@ -1,4 +1,9 @@
 #!/bin/bash
+echo "Created by GrzechuG alias BlueHat139"
+if [[ -z "$2" ]]; then
+    echo "Usage: ./dns-snooper.sh <dns server adress> <file with domain names to check>"
+    exit
+fi
 echo "">log.txt
 for line in $(cat "$2");do
  answer=$(dig @$1 $line A +norecurse)
